@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 
 import style from './navigation.module.scss';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/assets';
-import { useDayPicker } from '@/context/Context';
+import { useDayPicker } from '@/context/сontext';
 
 export const Navigation = () => {
 	const { month, locale, onChangeMonth } = useDayPicker();

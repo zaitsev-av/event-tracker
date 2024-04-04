@@ -3,7 +3,7 @@ import { eachDayOfInterval, getISOWeek } from 'date-fns';
 
 import { WeekNumber } from '@/components/week-number/week-number';
 
-import { DayPickerProvider, initialProps } from '@/context/Context';
+import { DayPickerProvider, initialProps } from '@/context/сontext';
 
 const meta = {
 	title: 'Components/Week-number',

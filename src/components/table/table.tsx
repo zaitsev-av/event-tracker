@@ -4,7 +4,7 @@ import { Row } from '@/components/table/row';
 import { getMonthWeeks } from '@/utils/utils';
 
 import style from './table.module.scss';
-import { useDayPicker } from '@/context/Context';
+import { useDayPicker } from '@/context/сontext';
 
 export interface TableProps {
 	id?: string;

@@ -3,7 +3,7 @@ import { getUnixTime } from 'date-fns';
 import { Day } from '@/components/day';
 import { WeekNumber } from '@/components/week-number';
 
-import { useDayPicker } from '@/context/Context';
+import { useDayPicker } from '@/context/сontext';
 
 export interface RowProps {
 	displayMonth: Date;

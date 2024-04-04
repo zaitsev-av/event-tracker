@@ -1,7 +1,7 @@
 import { addDays, format, Locale, startOfISOWeek, startOfWeek } from 'date-fns';
 
 import style from './head-row.module.scss';
-import { useDayPicker } from '@/context/Context';
+import { useDayPicker } from '@/context/сontext';
 
 export function HeadRow(): JSX.Element {
 	const { locale, weekStartsOn, ISOWeek } = useDayPicker();
