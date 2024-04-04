@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Day } from '@/components/day/day';
 
+import { Day } from '@/components/day/day';
 
 const meta = {
 	title: 'Components/Day',

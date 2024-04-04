@@ -1,6 +1,5 @@
 import { addDays, format, Locale, startOfISOWeek, startOfWeek } from 'date-fns';
 
-
 import style from './head-row.module.scss';
 import { useDayPicker } from '@/context/Context';
 

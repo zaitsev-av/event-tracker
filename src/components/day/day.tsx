@@ -1,7 +1,6 @@
 import { clsx } from 'clsx';
 import { endOfMonth, isAfter, isBefore, isToday, startOfMonth } from 'date-fns';
 
-
 import style from './day.module.scss';
 
 export interface DayProps {

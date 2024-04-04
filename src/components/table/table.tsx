@@ -1,9 +1,10 @@
-import style from './table.module.scss';
-import { useDayPicker } from '@/context/Context';
-import { getMonthWeeks } from '@/utils/utils';
 import { HeadRow } from '@/components/table/head-row';
 import { Row } from '@/components/table/row';
 
+import { getMonthWeeks } from '@/utils/utils';
+
+import style from './table.module.scss';
+import { useDayPicker } from '@/context/Context';
 
 export interface TableProps {
 	id?: string;

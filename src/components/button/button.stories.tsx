@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@/components/button/button';
 
+import { Button } from '@/components/button/button';
 
 const meta = {
 	title: 'Components/TableButton',
@@ -15,8 +15,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-	args: {
-	},
+	args: {},
 	render: function (args) {
 		return <Button {...args} />;
 	}

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { EventTracker } from '@/components/event-tracker/event-tracker';
 
+import { EventTracker } from '@/components/event-tracker/event-tracker';
 
 const meta = {
 	title: 'Components/Event-Tracker',
@@ -19,7 +19,7 @@ export const Default: Story = {
 		value: '',
 		position: 'right'
 	},
-	render: function ({}) {
+	render: function () {
 		return <EventTracker />;
 	}
 };

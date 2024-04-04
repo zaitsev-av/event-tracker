@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write src",
+    "lint": "eslint src --ext .jsx,.js,.tsx,.ts  --no-error-on-unmatched-pattern --fix && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -16,10 +17,11 @@
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "clsx": "^2.1.0",
     "date-fns": "^3.6.0",
-    "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "stylelint": "^16.3.1"
+    "stylelint": "^16.3.1",
+    "stylelint-config-clean-order": "^5.4.2",
+    "stylelint-config-standard-scss": "^13.1.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.2.26",
@@ -41,6 +43,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "eslint-plugin-storybook": "^0.8.0",
+    "prettier": "^3.2.5",
     "sass": "^1.74.1",
     "storybook": "^8.0.5",
     "typescript": "^5.2.2",

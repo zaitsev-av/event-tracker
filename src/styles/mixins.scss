@@ -1,9 +1,9 @@
 @mixin animation-for-focus {
-  transition: box-shadow ease 0.7s;
+	transition: box-shadow ease 0.7s;
 }
 
 @mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

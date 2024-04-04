@@ -1,8 +1,8 @@
 import { addMonths, Locale } from 'date-fns';
 import { ru } from 'date-fns/locale';
 import { createContext, CSSProperties, ReactNode, useContext } from 'react';
-import { parseDate } from '@/utils/utils';
 
+import { parseDate } from '@/utils/utils';
 
 export interface IBase {
 	className?: string;

@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { eachDayOfInterval, getISOWeek } from 'date-fns';
+
 import { WeekNumber } from '@/components/week-number/week-number';
+
 import { DayPickerProvider, initialProps } from '@/context/Context';
-
-
-
 
 const meta = {
 	title: 'Components/Week-number',
