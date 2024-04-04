@@ -4,7 +4,7 @@ import { Row } from '@/components/table/row';
 import { getMonthWeeks } from '@/utils/utils';
 
 import style from './table.module.scss';
-import { useDayPicker } from '@/context/сontext';
+import { useEventTracker } from '@/context/сontext';
 
 export interface TableProps {
 	id?: string;
@@ -20,7 +20,7 @@ export function Table(props: TableProps): JSX.Element {
 		firstWeekContainsDate,
 		ISOWeek,
 		month
-	} = useDayPicker();
+	} = useEventTracker();
 
 	console.log(props.displayMonth, 'props.displayMonth');
 

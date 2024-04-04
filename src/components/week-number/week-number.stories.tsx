@@ -3,7 +3,7 @@ import { eachDayOfInterval, getISOWeek } from 'date-fns';
 
 import { WeekNumber } from '@/components/week-number/week-number';
 
-import { DayPickerProvider, initialProps } from '@/context/сontext';
+import { EventTrackerProvider, initialProps } from '@/context/сontext';
 
 const meta = {
 	title: 'Components/Week-number',
@@ -34,7 +34,7 @@ export const Default: Story = {
 		const today = new Date();
 		const weekNumber = getISOWeek(today);
 		return (
-			<DayPickerProvider initialProps={initialProps}>
+			<EventTrackerProvider initialProps={initialProps}>
 				{dates.map((_value, index) => (
 					<WeekNumber
 						key={index}
@@ -42,7 +42,7 @@ export const Default: Story = {
 						dates={dates}
 					/>
 				))}
-			</DayPickerProvider>
+			</EventTrackerProvider>
 		);
 	}
 };

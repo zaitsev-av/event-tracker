@@ -77,16 +77,17 @@ export interface DayPickerContextValue extends IBase {
 	toDate?: Date;
 }
 
-export const DayPickerContext = createContext<
+export const EventTrackerContext = createContext<
 	DayPickerContextValue | undefined
 >(undefined);
 
-export interface DayPickerProviderProps {
-	/** The initial props from the DayPicker component. */
+export interface EventTrackerProviderProps {
 	initialProps: IBase;
 	children?: ReactNode;
 }
-export function DayPickerProvider(props: DayPickerProviderProps): JSX.Element {
+export function EventTrackerProvider(
+	props: EventTrackerProviderProps
+): JSX.Element {
 	const { initialProps } = props;
 
 	const { fromDate, toDate } = parseDate(
@@ -103,16 +104,18 @@ export function DayPickerProvider(props: DayPickerProviderProps): JSX.Element {
 	};
 
 	return (
-		<DayPickerContext.Provider value={value}>
+		<EventTrackerContext.Provider value={value}>
 			{props.children}
-		</DayPickerContext.Provider>
+		</EventTrackerContext.Provider>
 	);
 }
 
-export function useDayPicker(): DayPickerContextValue {
-	const context = useContext(DayPickerContext);
+export function useEventTracker(): DayPickerContextValue {
+	const context = useContext(EventTrackerContext);
 	if (!context) {
-		throw new Error(`useDayPicker must be used within a DayPickerProvider.`);
+		throw new Error(
+			`useEventTracker must be used within a EventTrackerProvider.`
+		);
 	}
 	return context;
 }

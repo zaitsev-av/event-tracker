@@ -1,7 +1,7 @@
 import { Navigation } from '@/components/navigation';
 import { Table } from '@/components/table';
 
-import { DayPickerProvider, initialProps } from '@/context';
+import { EventTrackerProvider, initialProps } from '@/context';
 
 // interface Props {
 // fromYear: number;
@@ -14,10 +14,10 @@ import { DayPickerProvider, initialProps } from '@/context';
 export const EventTracker = () => {
 	return (
 		<div>
-			<DayPickerProvider initialProps={initialProps}>
+			<EventTrackerProvider initialProps={initialProps}>
 				<Navigation />
 				<Table displayMonth={new Date()} />
-			</DayPickerProvider>
+			</EventTrackerProvider>
 		</div>
 	);
 };

@@ -2,10 +2,10 @@ import { format } from 'date-fns';
 
 import style from './navigation.module.scss';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/assets';
-import { useDayPicker } from '@/context/сontext';
+import { useEventTracker } from '@/context/сontext';
 
 export const Navigation = () => {
-	const { month, locale, onChangeMonth } = useDayPicker();
+	const { month, locale, onChangeMonth } = useEventTracker();
 
 	// const onChangeMonth = () => {
 	// 	const nextMonth = addMonths(month!, 1);

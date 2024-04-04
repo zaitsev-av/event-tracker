@@ -1,10 +1,10 @@
 import { addDays, format, Locale, startOfISOWeek, startOfWeek } from 'date-fns';
 
 import style from './head-row.module.scss';
-import { useDayPicker } from '@/context/сontext';
+import { useEventTracker } from '@/context/сontext';
 
 export function HeadRow(): JSX.Element {
-	const { locale, weekStartsOn, ISOWeek } = useDayPicker();
+	const { locale, weekStartsOn, ISOWeek } = useEventTracker();
 	function getWeekdays(
 		locale?: Locale,
 		weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
