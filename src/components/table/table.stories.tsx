@@ -17,8 +17,5 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		displayMonth: new Date()
-	},
-	render: function (args) {
-		return <Table {...args} />;
 	}
 };

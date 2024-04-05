@@ -1,24 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { eachDayOfInterval, getISOWeek } from 'date-fns';
 
-import { WeekNumber } from '@/components/week-number/week-number';
+import { Row } from '@/components/row/row';
 
 const meta = {
-	title: 'Components/Week-number',
-	component: WeekNumber,
+	title: 'Components/Row',
+	component: Row,
 	parameters: {
 		layout: 'centered'
 	},
 	tags: ['autodocs']
-} satisfies Meta<typeof WeekNumber>;
+} satisfies Meta<typeof Row>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
+		displayMonth: new Date(),
 		dates: [],
-		number: 1
+		weekNumber: 1
 	},
 	render: function () {
 		const startDate = new Date();
@@ -33,13 +34,11 @@ export const Default: Story = {
 		const weekNumber = getISOWeek(today);
 		return (
 			<>
-				{dates.map((_value, index) => (
-					<WeekNumber
-						key={index}
-						number={weekNumber + index}
-						dates={dates}
-					/>
-				))}
+				<Row
+					displayMonth={today}
+					dates={dates}
+					weekNumber={weekNumber}
+				/>
 			</>
 		);
 	}

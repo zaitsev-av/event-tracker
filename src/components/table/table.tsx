@@ -1,7 +1,7 @@
-import { HeadRow } from '@/components/table/head-row';
-import { Row } from '@/components/table/row';
-
 import { getMonthWeeks } from '@/utils/utils';
+
+import { HeadRow } from '../head-row';
+import { Row } from '../row';
 
 import style from './table.module.scss';
 import { useEventTracker } from '@/context/сontext';
