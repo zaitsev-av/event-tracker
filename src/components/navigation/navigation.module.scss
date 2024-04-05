@@ -1,3 +1,5 @@
+@import "src/styles/mixins";
+
 .container {
 	display: flex;
 	gap: 25px;
@@ -7,16 +9,20 @@
 	padding-bottom: 24px;
 
 	.root {
+        @include flex-center;
+
 		all: inherit;
 
-		display: flex;
 		gap: 10px;
-		align-items: center;
-		justify-content: center;
 
 		padding: 12px;
 
 		border: 1px solid var(--color-danger-100);
-		border-radius: 99px;
+		border-radius: 16px;
+
+        &:hover {
+          @include shake-left;
+        }
+
 	}
 }

@@ -15,7 +15,7 @@ export const Navigation = () => {
 	// 	// month = nextMonth
 	// };
 
-	const monthName = format(displayedMonth, 'MMMM', {
+	const monthName = format(displayedMonth, 'LLLL', {
 		locale
 	});
 	return (
