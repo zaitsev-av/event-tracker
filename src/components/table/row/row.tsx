@@ -3,8 +3,6 @@ import { getUnixTime } from 'date-fns';
 import { Day } from '@/components/day';
 import { WeekNumber } from '@/components/week-number';
 
-import { useEventTracker } from '@/context/сontext';
-
 export interface RowProps {
 	displayMonth: Date;
 	weekNumber: number;
@@ -12,8 +10,8 @@ export interface RowProps {
 }
 
 export function Row(props: RowProps): JSX.Element {
-	const { showWeekNumber } = useEventTracker();
-	console.log(showWeekNumber, '-> showWeekNumber');
+	// const { showWeekNumber } = useEventTracker();
+	// console.log(showWeekNumber, '-> showWeekNumber');
 
 	// let weekNumberCell;
 	// if (showWeekNumber) {

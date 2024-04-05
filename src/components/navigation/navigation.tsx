@@ -2,17 +2,19 @@ import { format } from 'date-fns';
 
 import style from './navigation.module.scss';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/assets';
+import { useNavigation } from '@/context/navigation-context';
 import { useEventTracker } from '@/context/сontext';
 
 export const Navigation = () => {
-	const { month, locale, onChangeMonth } = useEventTracker();
+	const { locale } = useEventTracker();
+	const { displayedMonth, nextMonths } = useNavigation();
 
 	// const onChangeMonth = () => {
 	// 	const nextMonth = addMonths(month!, 1);
 	// 	// month = nextMonth
 	// };
 
-	const monthName = format(month!, 'MMMM', {
+	const monthName = format(displayedMonth, 'MMMM', {
 		locale
 	});
 	return (
@@ -21,10 +23,10 @@ export const Navigation = () => {
 				<ArrowLeftIcon />
 				{/*Prev*/}
 			</button>
-			Название месяца {monthName}
+			Название месяца: {monthName}
 			<button
 				className={style.root}
-				onClick={onChangeMonth}
+				onClick={nextMonths}
 			>
 				{/*Next*/}
 				<ArrowRightIcon />

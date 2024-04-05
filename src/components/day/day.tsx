@@ -27,7 +27,7 @@ export function Day(props: DayProps): JSX.Element {
 		)
 	};
 
-	console.log(isNoCurrentMonth, 'isDay');
+	// console.log(isNoCurrentMonth, 'isDay');
 
 	return (
 		<button

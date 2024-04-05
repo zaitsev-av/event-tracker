@@ -1,4 +1,4 @@
-import { addMonths, Locale } from 'date-fns';
+import { Locale } from 'date-fns';
 import { ru } from 'date-fns/locale';
 import { createContext, CSSProperties, ReactNode, useContext } from 'react';
 
@@ -31,7 +31,7 @@ export interface IBase {
 	initialFocus?: boolean;
 	today?: Date;
 	locale?: Locale;
-	onChangeMonth: () => void;
+	onChangeMonth: (month: Date) => void;
 }
 export const initialProps: IBase = {
 	className: '',
@@ -58,12 +58,8 @@ export const initialProps: IBase = {
 	ISOWeek: false,
 	today: new Date(),
 	locale: ru,
-	onChangeMonth: () => {
-		const nextMonth = addMonths(new Date(), 1);
-		console.log('called', nextMonth);
-		console.log('called', initialProps.month);
-
-		initialProps.month = nextMonth;
+	onChangeMonth: (month: Date) => {
+		initialProps.month = month;
 	}
 };
 

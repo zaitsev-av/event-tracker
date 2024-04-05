@@ -1,7 +1,7 @@
 import { Navigation } from '@/components/navigation';
 import { Table } from '@/components/table';
 
-import { EventTrackerProvider, initialProps } from '@/context';
+import { useNavigation } from '@/context/navigation-context';
 
 // interface Props {
 // fromYear: number;
@@ -12,12 +12,11 @@ import { EventTrackerProvider, initialProps } from '@/context';
 // position?: 'left' | 'right';
 // }
 export const EventTracker = () => {
+	const { displayedMonth } = useNavigation();
 	return (
 		<div>
-			<EventTrackerProvider initialProps={initialProps}>
-				<Navigation />
-				<Table displayMonth={new Date()} />
-			</EventTrackerProvider>
+			<Navigation />
+			<Table displayMonth={displayedMonth} />
 		</div>
 	);
 };
