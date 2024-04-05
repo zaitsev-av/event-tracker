@@ -6,7 +6,8 @@ import { useMonthsNavigation } from '@/hooks';
 type NavigationContextValue = {
 	displayedMonth: Date;
 	currentMonth: Date;
-	nextMonths: () => void;
+	nextMonthHandler: () => void;
+	prevMonthHandler: () => void;
 };
 
 export const NavigationContext = createContext<
@@ -16,12 +17,14 @@ export const NavigationContext = createContext<
 //todo убрать any
 export function NavigationProvider(props: any): JSX.Element {
 	const { month } = useEventTracker();
-	const { newMoths, nextMonthHandler } = useMonthsNavigation();
+	const { newMoths, nextMonthHandler, prevMonthHandler } =
+		useMonthsNavigation();
 
 	const value: NavigationContextValue = {
 		displayedMonth: newMoths,
 		currentMonth: month ?? new Date(),
-		nextMonths: nextMonthHandler
+		nextMonthHandler,
+		prevMonthHandler
 	};
 
 	return (

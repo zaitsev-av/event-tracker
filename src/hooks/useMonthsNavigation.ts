@@ -11,16 +11,24 @@ export function useMonthsNavigation() {
 	console.log(month, ' month -> useNavigation');
 	console.log(newMoths, ' newMoths -> useNavigation');
 	const nextMonthHandler = () => {
-		console.log('функция вызвалась');
 		// if (month?.getMonth() !== currentMonth) {
 		const nextMoth = addMonths(newMoths, 1);
 		setNewMonths(nextMoth);
 		onChangeMonth(nextMoth);
-		console.log('функция прошла условие и выполнила код');
 		// }
 
 		// return;
 	};
 
-	return { nextMonthHandler, newMoths };
+	const prevMonthHandler = () => {
+		// if (month?.getMonth() !== currentMonth) {
+		const prevMoth = addMonths(newMoths, -1);
+		setNewMonths(prevMoth);
+		onChangeMonth(prevMoth);
+		// }
+
+		// return;
+	};
+
+	return { nextMonthHandler, prevMonthHandler, newMoths };
 }
