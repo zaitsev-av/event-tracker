@@ -1,5 +1,6 @@
 import { clsx } from 'clsx';
 import { endOfMonth, isAfter, isBefore, isToday, startOfMonth } from 'date-fns';
+import { useState } from 'react';
 
 import style from './day.module.scss';
 
@@ -17,22 +18,28 @@ const isMonthBoundary = (current: Date, target: Date) => {
 };
 
 export function Day(props: DayProps): JSX.Element {
+	const [isAnimated, setIsAnimated] = useState(false);
+
 	const isNoCurrentMonth = isMonthBoundary(props.displayMonth, props.date);
 	const today = isToday(props.date ?? new Date());
 	const classNames = {
 		root: clsx(
 			style.root,
 			today && style.today,
-			isNoCurrentMonth && style.noCurrent
+			isNoCurrentMonth && style.noCurrent,
+			isAnimated && style.animation
 		)
 	};
 
-	// console.log(isNoCurrentMonth, 'isDay');
+	const handleClick = () => {
+		setIsAnimated(!isAnimated);
+	};
 
 	return (
 		<button
 			className={classNames.root}
 			disabled={isNoCurrentMonth}
+			onClick={handleClick}
 		>
 			{props.date.getDate()}
 		</button>

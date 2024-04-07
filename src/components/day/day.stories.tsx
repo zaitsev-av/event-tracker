@@ -21,13 +21,14 @@ export const Default: Story = {
 		const startDate = new Date();
 		const endDate = new Date(
 			startDate.getFullYear(),
-			startDate.getMonth(),
-			startDate.getDay() + 7
+			startDate.getMonth() + 1,
+			startDate.getDay()
 		);
-
+		console.log(startDate.getMonth(), '-> startDate.getMonth()');
 		const dates = eachDayOfInterval({ start: startDate, end: endDate });
+		console.log(dates, 'dates -> day.stories');
 		return (
-			<div style={{ display: 'flex', width: '500px', gap: 16 }}>
+			<div style={{ display: 'flex', gap: 16 }}>
 				{dates.map(day => (
 					<Day
 						displayMonth={args.displayMonth}

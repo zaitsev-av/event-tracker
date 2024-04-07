@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Day } from '@/components/day';
+import { HeadRow } from '@/components/head-row/head-row';
 
 const meta = {
 	title: 'Components/Head-row',
-	component: Day,
+	component: HeadRow,
 	parameters: {
 		layout: 'centered'
 	},
 	tags: ['autodocs']
-} satisfies Meta<typeof Day>;
+} satisfies Meta<typeof HeadRow>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
