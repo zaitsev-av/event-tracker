@@ -39,7 +39,7 @@ export function Day(props: DayProps): JSX.Element {
 		<button
 			className={classNames.root}
 			disabled={isNoCurrentMonth}
-			onClick={handleClick}
+			onDoubleClick={handleClick}
 		>
 			{props.date.getDate()}
 		</button>
