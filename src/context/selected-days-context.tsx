@@ -1,8 +1,10 @@
 import { createContext, useContext } from 'react';
 
+import { useSelectedDaysState } from '@/hooks';
+
 type SelectedDaysContextValue = {
 	selectedDays: string[];
-	onSelectedDays: () => void;
+	onSelectedDays: (value: Date) => void;
 };
 
 export const SelectedDaysContext = createContext<
@@ -11,9 +13,23 @@ export const SelectedDaysContext = createContext<
 
 //todo убрать any
 export function SelectedDaysProvider(props: any): JSX.Element {
+	const { selected, setSelected } = useSelectedDaysState();
+
+	const onSelectedDaysHandler = (day: any) => {
+		if (selected.length === 1) {
+			setSelected([...selected, day]);
+			return;
+		}
+
+		if (selected.length === 2) {
+			setSelected([...selected[0], day]);
+		}
+		setSelected([day]);
+	};
+
 	const value: SelectedDaysContextValue = {
-		selectedDays: [],
-		onSelectedDays: () => {}
+		selectedDays: selected,
+		onSelectedDays: onSelectedDaysHandler
 	};
 
 	return (

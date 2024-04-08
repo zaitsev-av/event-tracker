@@ -3,6 +3,7 @@ import { endOfMonth, isAfter, isBefore, isToday, startOfMonth } from 'date-fns';
 import { useState } from 'react';
 
 import style from './day.module.scss';
+import { useSelectedDays } from '@/context/selected-days-context';
 
 export interface DayProps {
 	displayMonth: Date;
@@ -19,6 +20,7 @@ const isMonthBoundary = (current: Date, target: Date) => {
 
 export function Day(props: DayProps): JSX.Element {
 	const [isAnimated, setIsAnimated] = useState(false);
+	const { selectedDays, onSelectedDays } = useSelectedDays();
 
 	const isNoCurrentMonth = isMonthBoundary(props.displayMonth, props.date);
 	const today = isToday(props.date ?? new Date());
@@ -35,11 +37,17 @@ export function Day(props: DayProps): JSX.Element {
 		setIsAnimated(!isAnimated);
 	};
 
+	console.log(selectedDays, '-> selectedDays');
+	const handleSelectedDays = () => {
+		onSelectedDays(props.date);
+	};
+
 	return (
 		<button
 			className={classNames.root}
 			disabled={isNoCurrentMonth}
 			onDoubleClick={handleClick}
+			onClick={handleSelectedDays}
 		>
 			{props.date.getDate()}
 		</button>
