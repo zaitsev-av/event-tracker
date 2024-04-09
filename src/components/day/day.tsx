@@ -1,22 +1,15 @@
 import { clsx } from 'clsx';
-import { endOfMonth, isAfter, isBefore, isToday, startOfMonth } from 'date-fns';
+import { isToday } from 'date-fns';
 import { useState } from 'react';
 
 import style from './day.module.scss';
+import { isMonthBoundary } from '@/utils';
 import { useSelectedDays } from '@/context/selected-days-context';
 
 export interface DayProps {
 	displayMonth: Date;
 	date: Date;
 }
-const isMonthBoundary = (current: Date, target: Date) => {
-	const startOfMonthDate = startOfMonth(current);
-	const endOfMonthDate = endOfMonth(current);
-
-	const isPreviousMonth = isBefore(target, startOfMonthDate);
-	const isNextMonth = isAfter(target, endOfMonthDate);
-	return isPreviousMonth || isNextMonth;
-};
 
 export function Day(props: DayProps): JSX.Element {
 	const [isAnimated, setIsAnimated] = useState(false);

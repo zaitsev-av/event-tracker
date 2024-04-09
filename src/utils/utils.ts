@@ -11,7 +11,9 @@ import {
 	getISOWeek,
 	getWeek,
 	startOfISOWeek,
-	startOfWeek
+	startOfWeek,
+	isBefore,
+	isAfter
 } from 'date-fns';
 
 export type MonthWeek = {
@@ -101,4 +103,13 @@ export const parseDate = (fromYear: number, toYear: number) => {
 		fromDate: new Date(fromYear, 0, 1),
 		toDate: new Date(toYear, 11, 31)
 	};
+};
+
+export const isMonthBoundary = (current: Date, target: Date) => {
+	const startOfMonthDate = startOfMonth(current);
+	const endOfMonthDate = endOfMonth(current);
+
+	const isPreviousMonth = isBefore(target, startOfMonthDate);
+	const isNextMonth = isAfter(target, endOfMonthDate);
+	return isPreviousMonth || isNextMonth;
 };
