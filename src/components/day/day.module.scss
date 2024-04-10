@@ -1,4 +1,4 @@
-@import "src/styles/mixins";
+@import 'src/styles/mixins';
 
 .root {
 	all: inherit;
@@ -12,7 +12,7 @@
 
 	background: rgb(45 43 43 / 80%);
 
-    transition: transform 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out;
 
 	&:enabled:hover {
 		animation: shadow-drop-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -27,7 +27,6 @@
 			box-shadow: 0 0 20px 0 rgb(0 0 0 / 35%);
 		}
 	}
-
 }
 
 .today {
@@ -40,5 +39,9 @@
 }
 
 .animation {
-  transform: scale(5);
+	transform: scale(5);
+}
+
+.highlighted {
+	background: var(--color-warning-100);
 }
