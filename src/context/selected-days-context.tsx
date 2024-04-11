@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, MutableRefObject, useContext, useState } from 'react';
 
 import { useSelectedDaysState } from '@/hooks';
 
@@ -6,7 +6,8 @@ type SelectedDaysContextValue = {
 	selectedDays: Date[];
 	onMouseDownHandler: (
 		event: React.MouseEvent<HTMLButtonElement>,
-		day: Date
+		day: Date,
+		ref: MutableRefObject<HTMLButtonElement>
 	) => void;
 	onMouseUpHandler: (
 		event: React.MouseEvent<HTMLButtonElement>,
@@ -47,7 +48,8 @@ export function SelectedDaysProvider(props: any): JSX.Element {
 
 	const onMouseDownHandler = (
 		event: React.MouseEvent<HTMLButtonElement>,
-		day: Date
+		day: Date,
+		ref: MutableRefObject<HTMLButtonElement>
 	): void => {
 		console.log(event);
 		console.log(day, ' -> props.date');
