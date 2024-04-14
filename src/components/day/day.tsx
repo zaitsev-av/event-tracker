@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 import { isToday } from 'date-fns';
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 import style from './day.module.scss';
 import { useSelectedDays } from '@/context';
@@ -15,12 +15,12 @@ export function Day(props: DayProps): JSX.Element {
 	const [isAnimated, setIsAnimated] = useState(false);
 	const { isDragging, selectedDays, onMouseUpHandler, onMouseDownHandler } =
 		useSelectedDays();
-	const [hover, setHover] = useState<boolean>(false);
+	// const [hover, setHover] = useState<boolean>(false);
 
 	const isNoCurrentMonth = isMonthBoundary(props.displayMonth, props.date);
 	const today = isToday(props.date ?? new Date());
 
-	const isHighlited =
+	const isHighlighted =
 		selectedDays &&
 		props.date >= selectedDays[0] &&
 		props.date <= selectedDays[1];
@@ -31,8 +31,8 @@ export function Day(props: DayProps): JSX.Element {
 			today && style.today,
 			isNoCurrentMonth && style.noCurrent,
 			isAnimated && style.animation,
-			isHighlited && style.highlighted,
-			hover && style.hover
+			isHighlighted && style.highlighted
+			// hover && style.hover
 		)
 	};
 	console.log(isDragging, '->  isDragging');
@@ -41,7 +41,7 @@ export function Day(props: DayProps): JSX.Element {
 		selectedDays[selectedDays?.length],
 		'selectedDays[selectedDays?.length]'
 	);
-	console.log(isHighlited, '-> isHighlited');
+	console.log(isHighlighted, '-> isHighlited');
 
 	const handleClick = () => {
 		setIsAnimated(!isAnimated);
@@ -85,12 +85,12 @@ export function Day(props: DayProps): JSX.Element {
 			// onMouseEnter={() => handleMouseEnter(props.date)}
 			onMouseOver={() => {
 				if (selectedDays[0] <= props.date) {
-					setHover(true);
+					// setHover(true);
 				}
 				// setHover(true);
 			}}
 			onMouseLeave={() => {
-				setHover(false);
+				// setHover(false);
 			}}
 		>
 			{props.date.getDate()}

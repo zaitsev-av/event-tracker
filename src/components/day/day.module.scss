@@ -11,10 +11,12 @@
 	color: var(--color-danger-100);
 
 	background: rgb(45 43 43 / 80%);
+   border-radius: 16px;
 
 	transition: transform 0.3s ease-in-out;
 
 	&:enabled:hover {
+        // background: var(--color-success-100);
 		animation: shadow-drop-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 	}
 
@@ -24,7 +26,7 @@
 		}
 
 		100% {
-			box-shadow: 0 0 20px 0 rgb(0 0 0 / 35%);
+			box-shadow: 0 0 10px 0 rgb(73 71 71 / 35%);
 		}
 	}
 }
@@ -45,6 +47,7 @@
 .highlighted {
 	background: var(--color-warning-100);
 }
+
 .hover {
 	background: var(--color-success-100);
 }
