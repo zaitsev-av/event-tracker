@@ -11,15 +11,9 @@ export function WeekNumber(props: WeekNumberProps): JSX.Element {
 	}
 
 	const content = formatWeekNumber(Number(weekNumber));
-
-	// const handleClick: MouseEventHandler = function (e) {
-	// 	 onWeekNumberClick(weekNumber, dates, e);
-	// };
-
 	return (
 		<button
 			name='week-number'
-			// onClick={handleClick}
 			className={style.root}
 		>
 			{content}
